@@ -1,21 +1,21 @@
 // font-family: 'Playfair Display', serif;
 // font-family: 'PT Sans', sans-serif;
 $fonts: (
-  "font1": "Playfair Display",
-  "font2": "PT Sans",
+"font1": "Playfair Display",
+"font2": "PT Sans",
 );
 
 $font-weights: (
-  "regular": 400,
-  "bold": 700,
+"regular": 400,
+"bold": 700,
 );
 
 $colors: (
-  "color1": #b8d8d8,
-  "color2": #7a9e9f,
-  "color3": #4f6367,
-  "color4": #eef5db,
-  "color5": #fe5f55,
+"color1": #b8d8d8,
+"color2": #7a9e9f,
+"color3": #4f6367,
+"color4": #eef5db,
+"color5": #fe5f55,
 );
 
 * {
@@ -30,7 +30,7 @@ body {
 .header {
   width: 100%;
   background-color: map-get($colors, "color1");
-
+  
   .section {
     margin: 0 auto;
     display: flex;
@@ -38,22 +38,22 @@ body {
     padding: 0 3rem;
     color: map-get($colors, "color3");
   }
-
+  
   .logo {
     font-family: map-get($fonts, "font2"), serif;
     font-weight: map-get($font-weights, "bold");
     font-size: 2rem;
     margin: 0;
   }
-
+  
   h1 {
     margin: 0.4rem 0;
   }
-
+  
   .navigation {
     display: flex;
   }
-
+  
   .list {
     display: flex;
     align-items: center;
@@ -63,25 +63,25 @@ body {
     font-family: map-get($fonts, "font2"), serif;
     font-weight: map-get($font-weights, "regular");
   }
-
+  
   .list-item {
     margin: 0 1rem;
   }
-
+  
   a {
     text-decoration: none;
     color: inherit;
   }
-
+  
   .icons {
     display: flex;
     align-items: center;
   }
-
+  
   .icon-container {
     margin: 0 0.5rem;
   }
-
+  
   .search-icon,
   .user-icon,
   .basket-icon {
@@ -90,13 +90,219 @@ body {
 }
 
 .main {
-    .hero {
-        width: 100%;
-        height: 40rem;
-        background: {
-            image: url('https://picsum.photos/1920/1080');
-            size: cover;
-            position: 50% 50%;
-        }
+  .banner {
+    width: 100%;
+    height: 40rem;
+    background: {
+      image: url("https://picsum.photos/1920/1080");
+      size: cover;
+      position: 50% 50%;
     }
+  }
+  
+  .icons-swiper {
+    max-width: 1300px;
+    width: 95%;
+    margin: 0 auto;
+  }
+  
+  .swiper-wrapper {
+    margin: 4rem auto;
+  }
+  
+  .swiper-slide {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .swiper-slide-item {
+    width: 100px;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    
+    img {
+      object-fit: cover;
+    }
+  }
+  
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.infos-section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 6rem 3rem;
+  color: map-get($colors, "color3");
+  margin-bottom: 4rem;
+  font-size: 1rem;
+  
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: map-get($colors, "color4");
+    width: 100%;
+    height: 63%;
+  }
+  
+  .down-arrow {
+    position: absolute;
+    left: 3rem;
+    bottom: 0;
+    width: 3rem;
+    transform: translateY(45%);
+  }
+  
+  .description-texts {
+    position: relative;
+    max-width: 330px;
+    width: 100%;
+    font-family: map-get($fonts, "font2"), serif;
+    margin-top: 5rem;
+  }
+  
+  .description-title {
+    font-size: 3rem;
+    font-weight: map-get($font-weights, "bold");
+    margin: 2.5rem 0;
+  }
+}
+
+.description-cards {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  
+  .single-card,
+  .double-cards {
+    max-width: 400px;
+    width: 100%;
+    font-size: 0;
+  }
+  
+  .single-card {
+    align-self: flex-start;
+    margin-top: 5rem;
+  }
+  
+  .card-img {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+  }
+  
+  .card-img-small {
+    width: 100%;
+    height: 14rem;
+    object-fit: cover;
+  }
+  
+  .card-text {
+    text-align: center;
+    font-family: map-get($fonts, "font2"), serif;
+    font-size: 1rem;
+    background-color: map-get($colors, "color4");
+    padding: 1.5rem 1.7rem;
+  }
+  
+  .card-title {
+    font-weight: map-get($font-weights, "bold");
+    margin: 0 0 1rem;
+  }
+  
+  .card-description {
+    margin: 0;
+  }
+}
+
+.showcase-section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: map-get($colors, "color4");
+    height: 100%;
+    width: 90%;
+  }
+  
+  .showcase {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .showcase-imgs {
+    position: relative;
+    max-width: 350px;
+    width: 100%;
+    height: 30rem;
+  }
+  
+  .showcase-img {
+    position: absolute;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .showcase-img0 {
+    position: relative;
+  }
+  
+  .showcase-infos {
+    position: relative;
+    max-width: 330px;
+    width: 100%;
+  }
+  
+  .showcase-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    font-family: map-get($fonts, "font2");
+    font-size: 1rem;
+    color: map-get($colors, "color3");
+  }
+
+  .showcase-info0 {
+    position: relative;
+  }
+
+  .showcase-title,
+  .showcase-description {
+    margin: 0;
+  }
+
+  .showcase-title {
+    font-size: 3rem;
+    font-weight: map-get($font-weights, "bold");
+  }
+
+  .cta {
+    max-width: 280px;
+    width: 90%;
+    background-color: map-get($colors, "color2");
+    border: none;
+    border-radius: 5px;
+    padding: 5% 0;
+    font-family: inherit;
+    font-size: 1.2rem;
+    color: map-get($colors, "color4");
+  }
+  
 }
