@@ -1,21 +1,21 @@
 // font-family: 'Playfair Display', serif;
 // font-family: 'PT Sans', sans-serif;
 $fonts: (
-"font1": "Playfair Display",
-"font2": "PT Sans",
+  "font1": "Playfair Display",
+  "font2": "PT Sans",
 );
 
 $font-weights: (
-"regular": 400,
-"bold": 700,
+  "regular": 400,
+  "bold": 700,
 );
 
 $colors: (
-"color1": #b8d8d8,
-"color2": #7a9e9f,
-"color3": #4f6367,
-"color4": #eef5db,
-"color5": #fe5f55,
+  "color1": #b8d8d8,
+  "color2": #7a9e9f,
+  "color3": #4f6367,
+  "color4": #eef5db,
+  "color5": #fe5f55,
 );
 
 * {
@@ -27,10 +27,20 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
 .header {
   width: 100%;
   background-color: map-get($colors, "color1");
-  
+
   .section {
     margin: 0 auto;
     display: flex;
@@ -38,22 +48,22 @@ body {
     padding: 0 3rem;
     color: map-get($colors, "color3");
   }
-  
+
   .logo {
     font-family: map-get($fonts, "font2"), serif;
     font-weight: map-get($font-weights, "bold");
     font-size: 2rem;
     margin: 0;
   }
-  
+
   h1 {
     margin: 0.4rem 0;
   }
-  
+
   .navigation {
     display: flex;
   }
-  
+
   .list {
     display: flex;
     align-items: center;
@@ -63,25 +73,20 @@ body {
     font-family: map-get($fonts, "font2"), serif;
     font-weight: map-get($font-weights, "regular");
   }
-  
+
   .list-item {
     margin: 0 1rem;
   }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
+
   .icons {
     display: flex;
     align-items: center;
   }
-  
+
   .icon-container {
     margin: 0 0.5rem;
   }
-  
+
   .search-icon,
   .user-icon,
   .basket-icon {
@@ -99,34 +104,36 @@ body {
       position: 50% 50%;
     }
   }
-  
+}
+
+.bullets {
   .icons-swiper {
     max-width: 1300px;
     width: 95%;
     margin: 0 auto;
   }
-  
+
   .swiper-wrapper {
     margin: 4rem auto;
   }
-  
+
   .swiper-slide {
     width: 100px;
     height: 100px;
   }
-  
+
   .swiper-slide-item {
     width: 100px;
     height: 100%;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
-    
+
     img {
       object-fit: cover;
     }
   }
-  
+
   .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
@@ -135,14 +142,11 @@ body {
 
 .infos-section {
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   padding: 6rem 3rem;
   color: map-get($colors, "color3");
   margin-bottom: 4rem;
   font-size: 1rem;
-  
+
   .background {
     position: absolute;
     top: 0;
@@ -151,15 +155,25 @@ body {
     width: 100%;
     height: 63%;
   }
-  
+
+  .infos-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1900px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
   .down-arrow {
     position: absolute;
-    left: 3rem;
-    bottom: 0;
+    left: 0;
+    top: 63%;
     width: 3rem;
-    transform: translateY(45%);
+    transform: translateY(-25%);
   }
-  
+
   .description-texts {
     position: relative;
     max-width: 330px;
@@ -167,7 +181,7 @@ body {
     font-family: map-get($fonts, "font2"), serif;
     margin-top: 5rem;
   }
-  
+
   .description-title {
     font-size: 3rem;
     font-weight: map-get($font-weights, "bold");
@@ -180,31 +194,31 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-  
+
   .single-card,
   .double-cards {
     max-width: 400px;
     width: 100%;
     font-size: 0;
   }
-  
+
   .single-card {
     align-self: flex-start;
     margin-top: 5rem;
   }
-  
+
   .card-img {
     width: 100%;
-    height: 30rem;
+    height: 480px;
     object-fit: cover;
   }
-  
+
   .card-img-small {
     width: 100%;
-    height: 14rem;
+    height: 224px;
     object-fit: cover;
   }
-  
+
   .card-text {
     text-align: center;
     font-family: map-get($fonts, "font2"), serif;
@@ -212,12 +226,12 @@ body {
     background-color: map-get($colors, "color4");
     padding: 1.5rem 1.7rem;
   }
-  
+
   .card-title {
     font-weight: map-get($font-weights, "bold");
     margin: 0 0 1rem;
   }
-  
+
   .card-description {
     margin: 0;
   }
@@ -225,47 +239,56 @@ body {
 
 .showcase-section {
   position: relative;
-  display: flex;
-  justify-content: space-between;
   padding: 3rem;
-  
+
+  .showcase-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1900px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
   .background {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
     background-color: map-get($colors, "color4");
-    height: 100%;
-    width: 90%;
+    height: calc(100% + 6rem);
+    width: 100vw;
   }
-  
+
   .showcase {
     display: flex;
     gap: 1rem;
   }
-  
+
   .showcase-imgs {
     position: relative;
     max-width: 350px;
     width: 100%;
-    height: 30rem;
+    height: 480px;
   }
-  
+
   .showcase-img {
     position: absolute;
     left: 0;
     object-fit: cover;
   }
-  
+
   .showcase-img0 {
     position: relative;
   }
-  
+
   .showcase-infos {
     position: relative;
     max-width: 330px;
     width: 100%;
   }
-  
+
   .showcase-info {
     position: absolute;
     top: 0;
@@ -304,5 +327,156 @@ body {
     font-size: 1.2rem;
     color: map-get($colors, "color4");
   }
-  
+
+  .showcase-swiper {
+    max-width: 500px;
+    width: 100%;
+    height: 300px;
+    margin: 0;
+  }
+}
+
+.instagram-brand {
+  padding: 12rem 3rem;
+  text-align: center;
+  font-family: map-get($fonts, "font1");
+  font-size: 2rem;
+  color: map-get($colors, "color5");
+
+  .instagram-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1900px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .brand-image,
+  .brand-description {
+    max-width: 400px;
+    width: 100%;
+    height: 400px;
+  }
+
+  .brand-description {
+    background-color: map-get($colors, "color4");
+    color: map-get($colors, "color3");
+    font-family: map-get($fonts, "font2");
+    font-size: 1rem;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    margin-top: 5rem;
+  }
+}
+
+.footer {
+  font-family: map-get($fonts, "font2"), serif;
+
+  .logo-holder {
+    position: relative;
+    text-align: center;
+  }
+
+  .line {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 2px;
+    background-color: map-get($colors, "color1");
+  }
+
+  .logo {
+    position: relative;
+    background-color: white;
+    padding: 0 10px;
+    font-weight: map-get($font-weights, "bold");
+    font-size: 1.5rem;
+  }
+
+  .footer-menus {
+    max-width: 1900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 5rem;
+    margin: 3rem 0 6rem;
+    display: flex;
+    justify-content: space-between;
+    color: map-get($colors, "color3");
+  }
+
+  .menu {
+    font-size: 0.8rem;
+  }
+
+  .menu-text {
+    font-size: 1.3rem;
+    color: map-get($colors, "color5");
+  }
+
+  .submenus {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5rem 3rem;
+    margin-top: 2rem;
+  }
+
+  .subscription-menu {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .subscription-menu,
+  .socialmedias-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .email-input {
+    border: none;
+    outline: none;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    padding: 0;
+    width: 86%;
+  }
+
+  .send-button {
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    color: inherit;
+    padding: 0;
+    float: right;
+  }
+
+  .underline {
+    width: 100%;
+    height: 1px;
+    background-color: map-get($colors, "color3");
+    margin-top: 3%;
+  }
+
+  .instagram {
+    margin-bottom: .3rem;
+  }
+
+  .instagram,
+  .facebook {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .instagram-icon,
+  .facebook-icon {
+    width: 1.2rem;
+  }
 }
