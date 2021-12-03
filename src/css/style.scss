@@ -18,6 +18,9 @@ $colors: (
   "color5": #fe5f55,
 );
 
+$default-horiz-padding: 3rem;
+$default-horiz-padding-mobile: 1rem;
+
 * {
   box-sizing: border-box;
 }
@@ -37,6 +40,15 @@ button {
   cursor: pointer;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+  color: map-get($colors, "color5");
+}
+
+.swiper-pagination-bullet-active {
+  background-color: map-get($colors, "color5");
+}
+
 .header {
   width: 100%;
   background-color: map-get($colors, "color1");
@@ -45,7 +57,7 @@ button {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    padding: 0 3rem;
+    padding: 0 $default-horiz-padding;
     color: map-get($colors, "color3");
   }
 
@@ -109,7 +121,7 @@ button {
 .bullets {
   .icons-swiper {
     max-width: 1300px;
-    width: 95%;
+    width: 90%;
     margin: 0 auto;
   }
 
@@ -142,7 +154,7 @@ button {
 
 .infos-section {
   position: relative;
-  padding: 6rem 3rem;
+  padding: 6rem $default-horiz-padding;
   color: map-get($colors, "color3");
   margin-bottom: 4rem;
   font-size: 1rem;
@@ -177,7 +189,7 @@ button {
   .description-texts {
     position: relative;
     max-width: 330px;
-    width: 100%;
+    width: 28%;
     font-family: map-get($fonts, "font2"), serif;
     margin-top: 5rem;
   }
@@ -194,6 +206,8 @@ button {
   display: flex;
   align-items: center;
   gap: 1rem;
+  max-width: 816px;
+  width: 63%;
 
   .single-card,
   .double-cards {
@@ -239,7 +253,7 @@ button {
 
 .showcase-section {
   position: relative;
-  padding: 3rem;
+  padding: $default-horiz-padding;
 
   .showcase-wrapper {
     position: relative;
@@ -264,12 +278,13 @@ button {
   .showcase {
     display: flex;
     gap: 1rem;
+    width: 57%;
   }
 
   .showcase-imgs {
     position: relative;
     max-width: 350px;
-    width: 100%;
+    width: 51%;
     height: 480px;
   }
 
@@ -277,6 +292,8 @@ button {
     position: absolute;
     left: 0;
     object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 
   .showcase-img0 {
@@ -286,7 +303,7 @@ button {
   .showcase-infos {
     position: relative;
     max-width: 330px;
-    width: 100%;
+    width: 48%;
   }
 
   .showcase-info {
@@ -330,14 +347,14 @@ button {
 
   .showcase-swiper {
     max-width: 500px;
-    width: 100%;
+    width: 40%;
     height: 300px;
     margin: 0;
   }
 }
 
 .instagram-brand {
-  padding: 12rem 3rem;
+  padding: 12rem $default-horiz-padding;
   text-align: center;
   font-family: map-get($fonts, "font1");
   font-size: 2rem;
@@ -355,8 +372,14 @@ button {
   .brand-image,
   .brand-description {
     max-width: 400px;
-    width: 100%;
+    width: 32%;
     height: 400px;
+  }
+
+  .instagram-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .brand-description {
@@ -374,6 +397,7 @@ button {
 
 .footer {
   font-family: map-get($fonts, "font2"), serif;
+  padding: 2rem 0;
 
   .logo-holder {
     position: relative;
@@ -416,24 +440,33 @@ button {
     font-size: 1.3rem;
     color: map-get($colors, "color5");
   }
+  .submenus,
+  .subscription,
+  .socialmedias {
+    margin-top: 2rem;
+  }
 
   .submenus {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 0.5rem 3rem;
-    margin-top: 2rem;
+    gap: 1rem 3rem;
   }
 
   .subscription-menu {
     max-width: 500px;
-    width: 100%;
+    width: 55%;
   }
 
   .subscription-menu,
   .socialmedias-menu {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .subscription-field {
+    display: flex;
     justify-content: space-between;
   }
 
@@ -444,7 +477,7 @@ button {
     font-family: inherit;
     color: inherit;
     padding: 0;
-    width: 86%;
+    width: 83%;
   }
 
   .send-button {
@@ -453,7 +486,6 @@ button {
     font-family: inherit;
     color: inherit;
     padding: 0;
-    float: right;
   }
 
   .underline {
@@ -464,7 +496,7 @@ button {
   }
 
   .instagram {
-    margin-bottom: .3rem;
+    margin-bottom: 0.3rem;
   }
 
   .instagram,
@@ -478,5 +510,113 @@ button {
   .instagram-icon,
   .facebook-icon {
     width: 1.2rem;
+  }
+
+  .legal {
+    text-align: center;
+    color: map-get($colors, "color3");
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 980px) {
+  .showcase-section {
+    .showcase-wrapper {
+      flex-direction: column;
+    }
+    .background {
+      top: -3rem;
+      right: -3rem;
+      transform: translateY(0%);
+      height: 100%;
+    }
+    .showcase {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .showcase-swiper {
+      width: 100%;
+      margin-top: 2rem;
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  .infos-section {
+    padding: 4rem $default-horiz-padding-mobile;
+    .infos-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+    .down-arrow {
+    }
+    .description-texts,
+    .description-cards {
+      max-width: 400px;
+      width: 100%;
+    }
+    .description-cards {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+  .showcase-section {
+    padding: $default-horiz-padding-mobile;
+
+    .background {
+      right: -1rem;
+    }
+  }
+  .instagram-brand {
+    padding: 8rem $default-horiz-padding-mobile;
+
+    .instagram-wrapper {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 3rem;
+    }
+    .brand-image,
+    .brand-description {
+      width: 100%;
+    }
+    .brand-description {
+      margin: 1rem 0;
+    }
+  }
+  .footer {
+    .footer-menus {
+      padding: 0 2rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4rem 0;
+      max-width: 300px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .subscription-menu {
+      width: 100%;
+    }
+    .email-input {
+      width: 77%;
+    }
+    .legal {
+      padding: 0 $default-horiz-padding-mobile;
+    }
+  }
+}
+
+@media (max-width: 660px) {
+  .showcase-section {
+    .showcase {
+      flex-direction: column;
+      align-items: center;
+    }
+    .showcase-imgs,
+    .showcase-infos {
+      width: 100%;
+    }
+    .showcase-description {
+      margin-bottom: 1rem;
+    }
   }
 }
