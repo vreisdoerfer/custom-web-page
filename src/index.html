@@ -18,58 +18,104 @@
     />
   </head>
   <body>
+    <div class="backdrop"></div>
     <header class="header">
       <section class="section">
-        <div class="logo">
-          <h1>LOGO</h1>
-        </div>
-        <nav class="navigation">
+        <button class="toggle-button">
+          <span class="button-bar"></span>
+          <span class="button-bar"></span>
+          <span class="button-bar"></span>
+        </button>
+        <a href="#" class="logo"
+          ><img src="../dist/assets/logo_icon.svg" alt="LOGO" class="logo-icon"
+        /></a>
+        <nav class="main-navigation">
           <ul class="list">
             <li class="list-item">
-              <a href="#">MENU</a>
+              <a href="#products" class="hover">PRODUCTS</a>
             </li>
             <li class="list-item">
-              <a href="#">MENU</a>
+              <a href="#history" class="hover">HISTORY</a>
             </li>
             <li class="list-item">
-              <a href="#">MENU</a>
+              <a href="#showcase" class="hover">SHOWCASE</a>
             </li>
             <li class="list-item">
-              <a href="#">MENU</a>
+              <a href="#socialmedia" class="hover">SOCIAL MEDIA</a>
             </li>
             <li class="list-item">
-              <a href="#">MENU</a>
+              <a href="#contact" class="hover">CONTACT</a>
             </li>
           </ul>
         </nav>
         <div class="icons">
           <div class="icon-container">
-            <img
-              src="../dist/assets/search_icon.svg"
-              alt="Search icon"
-              class="search-icon"
-            />
+            <a href="#">
+              <img
+                src="../dist/assets/search_icon.svg"
+                alt="Search icon"
+                class="search-icon"
+            /></a>
           </div>
           <div class="icon-container">
-            <img
-              src="../dist/assets/user_icon.svg"
-              alt="User icon"
-              class="user-icon"
-            />
+            <a href="#">
+              <img
+                src="../dist/assets/user_icon.svg"
+                alt="User icon"
+                class="user-icon"
+              />
+            </a>
           </div>
           <div class="icon-container">
-            <img
-              src="../dist/assets/basket_shopping_icon.svg"
-              alt="Shopping basket icon"
-              class="basket-icon"
-            />
+            <a href="#">
+              <img
+                src="../dist/assets/basket_shopping_icon.svg"
+                alt="Shopping basket icon"
+                class="basket-icon"
+              />
+            </a>
           </div>
         </div>
       </section>
     </header>
+    <nav class="mobile-navigation">
+      <h3 class="nav-title">PRODUCTS</h3>
+      <ul class="list">
+        <li class="list-item">
+          <a href="#products">PRODUCTS</a>
+        </li>
+        <li class="list-item">
+          <a href="#history">HISTORY</a>
+        </li>
+        <li class="list-item">
+          <a href="#showcase">SHOWCASE</a>
+        </li>
+        <li class="list-item">
+          <a href="#socialmedia">SOCIAL MEDIA</a>
+        </li>
+        <li class="list-item">
+          <a href="#contact">CONTACT</a>
+        </li>
+      </ul>
+    </nav>
     <main class="main">
-      <div class="banner"></div>
-      <div class="bullets">
+      <div class="banner">
+        <div class="banner-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="banner-img banner-img0"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="banner-img banner-img1"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="banner-img banner-img2"></div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="bullets" id="products">
         <div class="swiper icons-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -174,10 +220,10 @@
           <div class="swiper-pagination"></div>
         </div>
       </div>
-      <section class="infos-section">
+      <section class="infos-section" id="history">
         <div class="background"></div>
         <div class="infos-wrapper">
-          <a href="#" class="down-arrow"
+          <a href="#showcase" class="down-arrow"
             ><img
               src="../dist/assets/arrow_down_icon.svg"
               alt="Arrow pointing down"
@@ -195,12 +241,12 @@
           <div class="description-cards">
             <div class="single-card">
               <img
-                src="https://picsum.photos/400/480"
+                src="https://picsum.photos/id/1055/400/480"
                 alt="Random image"
                 class="card-img"
               />
               <div class="card-text">
-                <h3 class="card-title">Título do banner</h3>
+                <h3 class="card-title">Title 2</h3>
                 <p class="card-description">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempo.
@@ -209,24 +255,24 @@
             </div>
             <div class="double-cards">
               <img
-                src="https://picsum.photos/400/224"
+                src="https://picsum.photos/id/1056/400/244"
                 alt="Random image"
                 class="card-img-small"
               />
               <div class="card-text">
-                <h3 class="card-title">Título do banner</h3>
+                <h3 class="card-title">Title 2</h3>
                 <p class="card-description">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempo.
                 </p>
               </div>
               <img
-                src="https://picsum.photos/400/480"
+                src="https://picsum.photos/id/1057/400/480"
                 alt="Random image"
                 class="card-img"
               />
               <div class="card-text">
-                <h3 class="card-title">Título do banner</h3>
+                <h3 class="card-title">Title 3</h3>
                 <p class="card-description">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempo.
@@ -236,31 +282,31 @@
           </div>
         </div>
       </section>
-      <section class="showcase-section">
+      <section class="showcase-section" id="showcase">
         <div class="showcase-wrapper">
           <div class="background"></div>
           <div class="showcase">
             <div class="showcase-imgs">
               <img
-                src="https://picsum.photos/350/480"
+                src="https://picsum.photos/id/1055/350/480"
                 alt="Random img"
-                class="showcase-img showcase-img0"
+                class="showcase-img showcase-item0 showcase-item"
               />
               <img
-                src="https://picsum.photos/350/480"
+                src="https://picsum.photos/id/1056/350/480"
                 alt="Random img"
-                class="showcase-img showcase-img1"
+                class="showcase-img showcase-item1 showcase-item"
               />
               <img
-                src="https://picsum.photos/350/480"
+                src="https://picsum.photos/id/1057/350/480"
                 alt="Random img"
-                class="showcase-img showcase-img2"
+                class="showcase-img showcase-item2 showcase-item"
               />
             </div>
             <div class="showcase-infos">
-              <div class="showcase-info showcase-info0">
-                <span>Lorem ipsum lorem dolor</span>
-                <h2 class="showcase-title">Lorem ipsum dolor sit amet</h2>
+              <div class="showcase-info showcase-item0 showcase-item">
+                <span>ITEM 1</span>
+                <h2 class="showcase-title">ITEM 1 TITLE</h2>
                 <p class="showcase-description">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -270,9 +316,9 @@
                 </p>
                 <button class="cta">Call-to-action ></button>
               </div>
-              <div class="showcase-info showcase-info1">
-                <span>Lorem ipsum lorem dolor</span>
-                <h2 class="showcase-title">Lorem ipsum dolor sit amet</h2>
+              <div class="showcase-info showcase-item1 showcase-item">
+                <span>ITEM 2</span>
+                <h2 class="showcase-title">ITEM 2 TITLE</h2>
                 <p class="showcase-description">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -282,9 +328,9 @@
                 </p>
                 <button class="cta">Call-to-action ></button>
               </div>
-              <div class="showcase-info showcase-info2">
-                <span>Lorem ipsum lorem dolor</span>
-                <h2 class="showcase-title">Lorem ipsum dolor sit amet</h2>
+              <div class="showcase-info showcase-item2 showcase-item">
+                <span>ITEM 3</span>
+                <h2 class="showcase-title">ITEM 3 TITLE</h2>
                 <p class="showcase-description">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -301,7 +347,7 @@
               <div class="swiper-slide">
                 <div class="swiper-slide-item">
                   <img
-                    src="https://picsum.photos/500/300"
+                    src="https://picsum.photos/id/1055/500/300"
                     alt="Random image (Product)"
                     class="carousel-img"
                   />
@@ -310,7 +356,7 @@
               <div class="swiper-slide">
                 <div class="swiper-slide-item">
                   <img
-                    src="https://picsum.photos/500/300"
+                    src="https://picsum.photos/id/1056/500/300"
                     alt="Random image (Product)"
                     class="carousel-img"
                   />
@@ -319,7 +365,7 @@
               <div class="swiper-slide">
                 <div class="swiper-slide-item">
                   <img
-                    src="https://picsum.photos/500/300"
+                    src="https://picsum.photos/id/1057/500/300"
                     alt="Random image (Product)"
                     class="carousel-img"
                   />
@@ -331,12 +377,12 @@
           </div>
         </div>
       </section>
-      <div class="instagram-brand">
+      <div class="instagram-brand" id="socialmedia">
         <span>@instadamarca</span>
         <div class="instagram-wrapper">
           <div class="brand-image">
             <img
-              src="https://picsum.photos/400"
+              src="https://picsum.photos/id/1058/400"
               alt="Random image"
               class="instagram-image"
             />
@@ -351,7 +397,7 @@
           </div>
           <div class="brand-image">
             <img
-              src="https://picsum.photos/400"
+              src="https://picsum.photos/id/1059/400"
               alt="Random image"
               class="instagram-image"
             />
@@ -359,19 +405,21 @@
         </div>
       </div>
     </main>
-    <footer class="footer">
+    <footer class="footer" id="contact">
       <div class="logo-holder">
         <div class="line"></div>
-        <span class="logo">LOGO</span>
+        <a href="#" class="logo"
+          ><img src="../dist/assets/logo_icon.svg" alt="LOGO" class="logo-icon"
+        /></a>
       </div>
       <div class="footer-menus">
         <div class="menu">
           <span class="menu-text">MENU</span>
           <div class="submenus">
-            <div class="submenu"><a href="#">Submenu</a></div>
-            <div class="submenu"><a href="#">Submenu</a></div>
-            <div class="submenu"><a href="#">Submenu</a></div>
-            <div class="submenu"><a href="#">Submenu</a></div>
+            <div class="submenu"><a href="#" class="hover">Submenu</a></div>
+            <div class="submenu"><a href="#" class="hover">Submenu</a></div>
+            <div class="submenu"><a href="#" class="hover">Submenu</a></div>
+            <div class="submenu"><a href="#" class="hover">Submenu</a></div>
           </div>
         </div>
         <div class="menu subscription-menu">
@@ -389,27 +437,35 @@
           <div class="socialmedias">
             <div class="socialmedias-wrapper">
               <div class="instagram">
-                <a href="#"><img
-                  src="../dist/assets/instagram_icon.svg"
-                  alt="Instagram Icon"
-                  class="instagram-icon"
+                <a href="#"
+                  ><img
+                    src="../dist/assets/instagram_icon.svg"
+                    alt="Instagram Icon"
+                    class="instagram-icon"
                 /></a>
-                <a href="#">Submenu</a>
+                <div class="submenu">
+                  <a href="#" class="hover">Submenu</a>
+                </div>
               </div>
               <div class="facebook">
-                <a href="#"> <img
-                  src="../dist/assets/facebook_icon.svg"
-                  alt="Facebook Icon"
-                  class="facebook-icon"
+                <a href="#">
+                  <img
+                    src="../dist/assets/facebook_icon.svg"
+                    alt="Facebook Icon"
+                    class="facebook-icon"
                 /></a>
-                <a href="#">Submenu</a>
+                <div class="submenu">
+                  <a href="#" class="hover">Submenu</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="legal">
-        <span>@Vnda - Tecnologia para ecommerce - CNPJ 00.0000.000/0001-00</span>
+        <span
+          >@Vnda - Tecnologia para ecommerce - CNPJ 00.0000.000/0001-00</span
+        >
       </div>
     </footer>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

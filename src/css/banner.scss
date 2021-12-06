@@ -1,0 +1,35 @@
+@use 'variables';
+
+.main {
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 40rem;
+  }
+
+  .banner-swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .banner-img {
+    width: 100%;
+    height: 100%;
+    background: {
+      size: cover;
+      position: 50% 50%;
+    }
+  }
+
+  .banner-img0 {
+    background-image: url("https://picsum.photos/id/1052/1920/1080");
+  }
+
+  .banner-img1 {
+    background-image: url("https://picsum.photos/id/1053/1920/1080");
+  }
+
+  .banner-img2 {
+    background-image: url("https://picsum.photos/id/1054/1920/1080");
+  }
+}

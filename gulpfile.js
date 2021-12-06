@@ -1,6 +1,6 @@
 const gulp = require("gulp");
 const { src, series, parallel, dest, watch } = require("gulp");
-const compileSass = require("gulp-sass")(require("node-sass"));
+const compileSass = require("gulp-sass")(require("sass"));
 const terser = require("gulp-terser");
 const minifyCss = require("gulp-clean-css");
 const sourcemaps = require("gulp-sourcemaps");

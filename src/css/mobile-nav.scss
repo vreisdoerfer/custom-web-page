@@ -1,0 +1,28 @@
+@use "variables";
+
+.mobile-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 80%;
+  max-width: 440px;
+  background-color: map-get(variables.$colors, "color1");
+  color: map-get(variables.$colors, "color3");
+  font-family: map-get(variables.$fonts, "font2"), serif;
+  font-weight: map-get(variables.$font-weights, "regular");
+  z-index: 101;
+  transform: translateX(-100%);
+
+  .nav-title {
+    text-align: center;
+  }
+
+  .list {
+    font-size: 1rem;
+  }
+
+  .list-item {
+    margin: 1.5rem 0;
+  }
+}

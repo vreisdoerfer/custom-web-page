@@ -1,0 +1,30 @@
+@use "variables";
+
+.bullets {
+  .icons-swiper {
+    max-width: 1300px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .swiper-wrapper {
+    margin: 4rem auto;
+  }
+
+  .swiper-slide {
+    width: 100px;
+    height: 100px;
+  }
+
+  .swiper-slide-item {
+    width: 100px;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+
+    img {
+      object-fit: cover;
+    }
+  }
+}

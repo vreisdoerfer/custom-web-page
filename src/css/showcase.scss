@@ -1,0 +1,164 @@
+@use "variables";
+
+.showcase-section {
+  position: relative;
+  padding: variables.$default-horiz-padding;
+
+  .showcase-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1900px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .background {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    background-color: map-get(variables.$colors, "color4");
+    height: calc(100% + 6rem);
+    width: 100vw;
+  }
+
+  .showcase {
+    display: flex;
+    gap: 1rem;
+    width: 57%;
+  }
+
+  .showcase-imgs {
+    position: relative;
+    max-width: 350px;
+    width: 51%;
+    height: 480px;
+  }
+
+  .showcase-img {
+    position: absolute;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .showcase-img0 {
+    position: relative;
+  }
+
+  .showcase-infos {
+    position: relative;
+    max-width: 330px;
+    width: 48%;
+  }
+
+  .showcase-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    font-family: map-get(variables.$fonts, "font2");
+    font-size: 1rem;
+    color: map-get(variables.$colors, "color3");
+  }
+
+  .showcase-item {
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+  }
+
+  .showcase-item0 {
+    position: relative;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .showcase-title,
+  .showcase-description {
+    margin: 0;
+  }
+
+  .showcase-title {
+    font-size: 3rem;
+    font-weight: map-get(variables.$font-weights, "bold");
+  }
+
+  .cta {
+    max-width: 280px;
+    width: 90%;
+    background-color: map-get(variables.$colors, "color2");
+    border: none;
+    border-radius: 5px;
+    padding: 5% 0;
+    font-family: inherit;
+    font-size: 1.2rem;
+    color: map-get(variables.$colors, "color4");
+    transition: 0.3s;
+
+    &:hover {
+      background-color: map-get(variables.$colors, "color3");
+    }
+  }
+
+  .showcase-swiper {
+    max-width: 500px;
+    width: 40%;
+    height: 300px;
+    margin: 0;
+  }
+}
+
+@media (max-width: map-get(variables.$breakpoints, "breakpoint1")) {
+  .showcase-section {
+    .showcase-wrapper {
+      flex-direction: column;
+    }
+    .background {
+      top: -3rem;
+      right: -3rem;
+      transform: translateY(0%);
+      height: 100%;
+    }
+    .showcase {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .showcase-swiper {
+      width: 100%;
+      margin-top: 2rem;
+    }
+  }
+}
+
+@media (max-width: map-get(variables.$breakpoints, "breakpoint2")) {
+  .showcase-section {
+    padding: variables.$default-horiz-padding-mobile;
+
+    .background {
+      right: -1rem;
+    }
+  }
+}
+
+@media (max-width: map-get(variables.$breakpoints, "breakpoint3")) {
+  .showcase-section {
+    .showcase {
+      flex-direction: column;
+      align-items: center;
+    }
+    .showcase-imgs,
+    .showcase-infos {
+      width: 100%;
+    }
+    .showcase-description {
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -1,0 +1,122 @@
+@use "variables";
+
+.infos-section {
+  position: relative;
+  padding: 6rem variables.$default-horiz-padding;
+  color: map-get(variables.$colors, "color3");
+  margin-bottom: 4rem;
+  font-size: 1rem;
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: map-get(variables.$colors, "color4");
+    width: 100%;
+    height: 63%;
+  }
+
+  .infos-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1900px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .down-arrow {
+    position: absolute;
+    left: 0;
+    top: 63%;
+    width: 3rem;
+    transform: translateY(-25%);
+  }
+
+  .description-texts {
+    position: relative;
+    max-width: 330px;
+    width: 28%;
+    font-family: map-get(variables.$fonts, "font2"), serif;
+    margin-top: 5rem;
+  }
+
+  .description-title {
+    font-size: 3rem;
+    font-weight: map-get(variables.$font-weights, "bold");
+    margin: 2.5rem 0;
+  }
+}
+
+.description-cards {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 816px;
+  width: 63%;
+
+  .single-card,
+  .double-cards {
+    max-width: 400px;
+    width: 100%;
+    font-size: 0;
+  }
+
+  .single-card {
+    align-self: flex-start;
+    margin-top: 5rem;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+  }
+
+  .card-img-small {
+    width: 100%;
+    height: 224px;
+    object-fit: cover;
+  }
+
+  .card-text {
+    text-align: center;
+    font-family: map-get(variables.$fonts, "font2"), serif;
+    font-size: 1rem;
+    background-color: map-get(variables.$colors, "color4");
+    padding: 1.5rem 1.7rem;
+  }
+
+  .card-title {
+    font-weight: map-get(variables.$font-weights, "bold");
+    margin: 0 0 1rem;
+  }
+
+  .card-description {
+    margin: 0;
+  }
+}
+
+@media (max-width: map-get(variables.$breakpoints, "breakpoint2")) {
+  .infos-section {
+    padding: 4rem variables.$default-horiz-padding-mobile;
+    .infos-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+    .down-arrow {
+      display: none;
+    }
+    .description-texts,
+    .description-cards {
+      max-width: 400px;
+      width: 100%;
+    }
+    .description-cards {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+}

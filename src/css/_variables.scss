@@ -1,0 +1,22 @@
+$fonts: (
+  "font1": "Playfair Display",
+  "font2": "PT Sans",
+);
+
+$font-weights: (
+  "regular": 400,
+  "bold": 700,
+);
+
+$colors: (
+  "color1": #b8d8d8,
+  "color2": #7a9e9f,
+  "color3": #4f6367,
+  "color4": #eef5db,
+  "color5": #fe5f55,
+);
+
+$breakpoints: ("breakpoint1": "980px", "breakpoint2": "780px", "breakpoint3": "660px");
+
+$default-horiz-padding: 3rem;
+$default-horiz-padding-mobile: 1rem;

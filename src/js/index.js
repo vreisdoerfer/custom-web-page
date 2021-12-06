@@ -1,11 +1,42 @@
 "use strict";
+var backdrop = document.querySelector(".backdrop");
+var toggleButton = document.querySelector(".toggle-button");
+var mobileNav = document.querySelector(".mobile-navigation");
+var showcaseItems = document.querySelectorAll(".showcase-item");
+
+backdrop.addEventListener("click", function () {
+  mobileNav.classList.remove("open");
+  backdrop.classList.remove("open");
+  setTimeout(() => {
+    backdrop.style.display = "none";
+  }, 200);
+});
+
+toggleButton.addEventListener("click", function () {
+  mobileNav.classList.add("open");
+  backdrop.style.display = "block";
+  setTimeout(() => {
+    backdrop.classList.add("open");
+  }, 10);
+});
+
+var bannerSwiper = new Swiper(".banner-swiper", {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  slidesPerGroup: 1,
+  centeredSlides: false,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
 
 var iconsSwiper = new Swiper(".icons-swiper", {
   slidesPerView: 1,
   spaceBetween: 0,
   slidesPerGroup: 1,
   centeredSlides: false,
-  loop: true,
   navigation: {
     nextEl: ".icons-swiper .swiper-button-next",
     prevEl: ".icons-swiper .swiper-button-prev",
@@ -15,11 +46,6 @@ var iconsSwiper = new Swiper(".icons-swiper", {
     clickable: true,
   },
   breakpoints: {
-    // 320: {
-    //   slidesPerView: 1,
-    //   spaceBetween: 10,
-    //   slidesPerGroup: 1,
-    // },
     320: {
       slidesPerView: 2,
       spaceBetween: 5,
@@ -43,31 +69,23 @@ var showcaseSwiper = new Swiper(".showcase-swiper", {
   spaceBetween: 0,
   slidesPerGroup: 1,
   centeredSlides: true,
-  loop: true,
   navigation: {
     nextEl: ".showcase-swiper .swiper-button-next",
     prevEl: ".showcase-swiper .swiper-button-prev",
   },
-  // breakpoints: {
-  //   320: {
-  //     slidesPerView: 1,
-  //     spaceBetween: 10,
-  //     slidesPerGroup: 1,
-  //   },
-  //   640: {
-  //     slidesPerView: 3,
-  //     spaceBetween: 10,
-  //     slidesPerGroup: 3,
-  //   },
-  //   768: {
-  //     slidesPerView: 4,
-  //     spaceBetween: 10,
-  //     slidesPerGroup: 4,
-  //   },
-  //   1250: {
-  //     slidesPerView: 6,
-  //     spaceBetween: 10,
-  //     slidesPerGroup: 6,
-  //   },
-  // },
+});
+
+showcaseSwiper.on("activeIndexChange", () => {
+  var active = ".showcase-item" + showcaseSwiper.activeIndex;
+  var activeEls = document.querySelectorAll(active);
+  showcaseItems.forEach((showcaseItem) => {
+    showcaseItem.style.pointerEvents = "none";
+    showcaseItem.style.opacity = "0";
+  });
+  setTimeout(()=> {
+    activeEls.forEach((activeEl) => {
+      activeEl.style.pointerEvents = "all";
+      activeEl.style.opacity = "1";
+    });
+  }, 10)
 });

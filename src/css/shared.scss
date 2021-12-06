@@ -1,0 +1,76 @@
+@use 'variables';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: map-get(variables.$colors, "color5");
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: map-get(variables.$colors, "color5");
+}
+
+.open {
+  display: block !important;
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+
+.hover:after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  opacity: 0;
+  background: map-get(variables.$colors, "color3");
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+
+.hover:hover:after {
+  width: 110%;
+  opacity: 1;
+}
+
+.backdrop {
+  position: fixed;
+  display: none;
+  top: 0;
+  opacity: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.2s linear;
+}
