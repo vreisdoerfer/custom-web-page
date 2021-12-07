@@ -75,6 +75,8 @@ var showcaseSwiper = new Swiper(".showcase-swiper", {
   },
 });
 
+
+//Show the information and image according to carousel index
 showcaseSwiper.on("activeIndexChange", () => {
   var active = ".showcase-item" + showcaseSwiper.activeIndex;
   var activeEls = document.querySelectorAll(active);

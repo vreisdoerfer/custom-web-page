@@ -43,43 +43,6 @@
 }
 
 @media (max-width: map-get(variables.$breakpoints, "breakpoint2")) {
-  // .header {
-  //   .section {
-  //     padding: 0 variables.$default-horiz-padding-mobile;
-  //   }
-  //   .toggle-button {
-  //     display: block;
-  //   }
-  //   .main-navigation {
-  //     display: none;
-  //   }
-  // }
-  // .infos-section {
-  //   padding: 4rem variables.$default-horiz-padding-mobile;
-  //   .infos-wrapper {
-  //     flex-direction: column;
-  //     align-items: center;
-  //   }
-  //   .down-arrow {
-  //     display: none;
-  //   }
-  //   .description-texts,
-  //   .description-cards {
-  //     max-width: 400px;
-  //     width: 100%;
-  //   }
-  //   .description-cards {
-  //     flex-direction: column;
-  //     gap: 0;
-  //   }
-  // }
-  // .showcase-section {
-  //   padding: variables.$default-horiz-padding-mobile;
-
-  //   .background {
-  //     right: -1rem;
-  //   }
-  // }
   .instagram-brand {
     padding: 8rem variables.$default-horiz-padding-mobile;
 

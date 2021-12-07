@@ -1,4 +1,5 @@
 const gulp = require("gulp");
+const zip = require("gulp-zip");
 const { src, series, parallel, dest, watch } = require("gulp");
 const compileSass = require("gulp-sass")(require("sass"));
 const terser = require("gulp-terser");
@@ -36,6 +37,18 @@ const bundleSass = () => {
     .pipe(dest("dist/css"));
 };
 
+const zipFiles = () => {
+  var srcZip = gulp
+    .src(["./gulpfile.js", "./package.json", "./src/**", "!./src/src.zip"], { base: "./" })
+    .pipe(zip("src.zip"))
+    .pipe(gulp.dest("src"));
+  var distZip = gulp
+    .src(["dist/**", "!./dist/dist.zip"], { base: "./" })
+    .pipe(zip("dist.zip"))
+    .pipe(gulp.dest("dist"));
+  return srcZip, distZip;
+};
+
 const watchTasks = () => {
   watch([cssPath, jsPath], { interval: 1000 }, parallel(bundleSass, jsTask));
 };
@@ -44,4 +57,8 @@ exports.copyHtml = copyHtml;
 exports.copyAssets = copyAssets;
 exports.jsTask = jsTask;
 exports.bundleSass = bundleSass;
-exports.default = series(parallel(copyHtml, copyAssets, jsTask, bundleSass), watchTasks);
+exports.zipFiles = zipFiles;
+exports.default = series(
+  parallel(copyHtml, copyAssets, jsTask, bundleSass, zipFiles),
+  watchTasks
+);
